@@ -36,13 +36,20 @@ function draw() {
   fill(255);
   paper.display();
   keyPressed();
+  //isTouching();
 
 }
 
 function keyPressed(){
 	if (keyCode===UP_ARROW){
-		Matter.Body.applyForce(paper.body,paper.body.position,{x:130,y:-145});
+		Matter.Body.applyForce(paper.body,paper.body.position,{x:20,y:-15});
 	}
 	
+}
+
+function isTouching(){
+	if (paper.isTouching(dustbinObj)){
+		paper.visible=false;
+	}
 }
 
